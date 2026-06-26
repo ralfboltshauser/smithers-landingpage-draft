@@ -7,7 +7,7 @@ export function ThemeShell({ children }: { children: React.ReactNode }) {
   return (
     <ThemeProvider>
       {children}
-      {process.env.NODE_ENV === "development" ? <ThemePlayground /> : null}
+      <ThemePlayground />
     </ThemeProvider>
   );
 }

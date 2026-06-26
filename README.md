@@ -65,7 +65,7 @@ Metadata routes (`/opengraph-image`, `/icon`, `/apple-icon`, `/manifest.webmanif
 
 CSS variables in `app/theme.css` drive palette, typography, and radius via `data-palette`, `data-font`, and `data-radius` on `<html>`.
 
-In development, a **Theme** button in the bottom-right opens a playground to preview Brass / Teal / Blue palettes, three font stacks, and brutalist vs rounded corners. Preferences persist in `localStorage`.
+A **Theme** button in the bottom-right opens a playground to preview Brass / Teal / Blue palettes, three font stacks, and brutalist vs rounded corners. Preferences persist in `localStorage`.
 
 ## Deploy
 
