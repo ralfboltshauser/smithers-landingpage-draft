@@ -4,8 +4,6 @@ Draft landing page for [Smithers](https://smithers.sh) — durable orchestration
 
 **Live → [smithers-landingpage-draft.vercel.app](https://smithers-landingpage-draft.vercel.app)**
 
-![Hero section — headline and interactive demo](./docs/hero.png)
-
 ```bash
 pnpm install && pnpm dev
 ```
