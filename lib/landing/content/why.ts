@@ -1,5 +1,10 @@
 import type { WhyDemoType } from "@/lib/landing/types";
 
+export const WHY_SECTION = {
+  description:
+    "Chat is one context and one shot. Smithers lets you design context per step and feedback loops that rerun until the work is right.",
+} as const;
+
 export const WHY_CARDS: {
   title: string;
   body: string;
@@ -7,7 +12,7 @@ export const WHY_CARDS: {
 }[] = [
   {
     title: "Multi-agent systems improve quality",
-    body: "Different agents and prompts per step — triage, specialist work, sign-off. Quality comes from the system, not one model guessing in a single chat.",
+    body: "Scope what each step sees — not one bloated thread. Wire review loops that check output and send the agent back until it passes. Quality comes from the system you designed.",
     demo: "multi-agent",
   },
   {

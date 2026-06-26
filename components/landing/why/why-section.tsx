@@ -1,7 +1,7 @@
 import { WhyCard } from "@/components/landing/why/why-card";
 import { SectionHeading } from "@/components/landing/shared/section-heading";
 import { SectionShell } from "@/components/landing/shared/section-shell";
-import { WHY_CARDS } from "@/lib/landing/content";
+import { WHY_CARDS, WHY_SECTION } from "@/lib/landing/content";
 
 export function WhySection() {
   return (
@@ -10,7 +10,7 @@ export function WhySection() {
         <SectionHeading
           label="Why not chat"
           title="Why not just stay in the chat window?"
-          description="Chat makes you steer every reply. Smithers gives you multi-agent workflows, reusable expertise, and systems you improve over time."
+          description={WHY_SECTION.description}
           descriptionClassName="text-base sm:text-lg"
         />
 

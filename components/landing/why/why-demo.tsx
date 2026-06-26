@@ -4,7 +4,7 @@ import { ArrowRight, GitBranch, Wrench } from "lucide-react";
 import { Fragment } from "react";
 
 function MultiAgentVisual() {
-  const steps = ["Triage", "Specialist", "Sign-off"];
+  const steps = ["Plan", "Review", "Implement"];
 
   return (
     <VisualFrame>
