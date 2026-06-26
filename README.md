@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Smithers Landing
 
-## Getting Started
+Marketing site for [Smithers](https://smithers.sh) — durable orchestration for agentic workflows.
 
-First, run the development server:
+Built with [Next.js](https://nextjs.org) (App Router), React 19, Tailwind CSS v4, and [shadcn/ui](https://ui.shadcn.com).
+
+## Quick start
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command | Description |
+|---------|-------------|
+| `pnpm dev` | Start dev server |
+| `pnpm build` | Production build |
+| `pnpm start` | Serve production build |
+| `pnpm lint` | Run ESLint |
+| `pnpm typecheck` | Run TypeScript |
 
-## Learn More
+## Environment
 
-To learn more about Next.js, take a look at the following resources:
+Copy `.env.example` to `.env.local` and set your public URL for correct OG tags and sitemap entries:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+NEXT_PUBLIC_SITE_URL=https://smithers.sh
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+On Vercel, `VERCEL_URL` is used automatically when this variable is unset.
 
-## Deploy on Vercel
+## Project structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+app/                    Routes, global styles, metadata image routes
+components/
+  brand/                Shared Smithers mark
+  landing/              Landing page sections (hero, qualification, …)
+  theme/                Dev theme lab (palette / font / radius)
+  ui/                   shadcn primitives
+lib/
+  brand/                Brand tokens (single source of truth)
+  landing/              Copy, constants, hooks, recipe marquee data
+  og/                   Open Graph image generation
+  site.ts               Site metadata config
+  theme/                Theme preferences (localStorage + CSS vars)
+assets/og-fonts/        Bundled fonts for OG image generation
+public/                 Static assets (smithers-icon.svg)
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Pages
+
+| Route | Description |
+|-------|-------------|
+| `/` | Main landing page |
+| `/brand-guide` | Brand reference (colors, typography, mark) |
+
+Metadata routes (`/opengraph-image`, `/icon`, `/apple-icon`, `/manifest.webmanifest`, `/robots.txt`, `/sitemap.xml`) are generated automatically.
+
+## Theme system
+
+CSS variables in `app/theme.css` drive palette, typography, and radius via `data-palette`, `data-font`, and `data-radius` on `<html>`.
+
+In development, a **Theme** button in the bottom-right opens a playground to preview Brass / Teal / Blue palettes, three font stacks, and brutalist vs rounded corners. Preferences persist in `localStorage`.
+
+## Deploy
+
+```bash
+vercel          # preview
+vercel --prod   # production
+```
+
+Set `NEXT_PUBLIC_SITE_URL` in the Vercel project settings for correct OG tags and sitemap entries.
+
+## Related
+
+- [Smithers](https://smithers.sh) — documentation and product
+- [smithersai/smithers](https://github.com/smithersai/smithers) — orchestrator (main repo)
+
+## License
+
+MIT — see [LICENSE](./LICENSE).
